@@ -1,0 +1,1 @@
+Final project for [C++ Brown Belt course](https://www.coursera.org/learn/c-plus-plus-brown).
