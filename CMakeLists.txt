@@ -7,7 +7,7 @@ set(CXX_FLAGS "-Wall")
 set(CMAKE_CXX_FLAGS, "${CXX_FLAGS}")
 
 include_directories(include)
-set(sources src/bus_dp.cpp src/route.cpp)
+set(sources src/bus_db.cpp src/route.cpp)
 
 add_subdirectory(googletest)
 

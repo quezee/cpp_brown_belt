@@ -1,1 +1,0 @@
-/usr/bin/c++    -rdynamic CMakeFiles/main.dir/main.cpp.o CMakeFiles/main.dir/src/bus_dp.cpp.o CMakeFiles/main.dir/src/route.cpp.o  -o main 

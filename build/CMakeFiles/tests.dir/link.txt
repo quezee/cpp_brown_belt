@@ -1,1 +1,0 @@
-/usr/bin/c++    -rdynamic CMakeFiles/tests.dir/tests.cpp.o CMakeFiles/tests.dir/src/bus_dp.cpp.o CMakeFiles/tests.dir/src/route.cpp.o  -o tests  lib/libgtest_main.a lib/libgtest.a -lpthread 
