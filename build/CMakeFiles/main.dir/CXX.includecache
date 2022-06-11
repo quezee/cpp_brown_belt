@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/bus_db.h
+unordered_set
+-
+unordered_map
+-
+route.h
+../include/route.h
+
+../include/route.h
+list
+-
+unordered_set
+-
+unordered_map
+-
+string_view
+-
+optional
+-
+stop.h
+../include/stop.h
+
+../include/stop.h
+string
+-
+
+/home/quezee/edu/cpp/cpp_brown/final/main.cpp
+iostream
+-
+iomanip
+-
+bus_db.h
+/home/quezee/edu/cpp/cpp_brown/final/bus_db.h
+
