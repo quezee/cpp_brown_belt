@@ -8,18 +8,23 @@
 
 using std::unordered_set, std::unordered_map, std::list, std::string, std::string_view, std::optional;
 using RouteIt = std::reverse_iterator<std::__cxx11::list<std::string>::const_iterator>;
+using StopMapType = unordered_map<string, Stop>;
 
 class Route {
 public:
-    Route() = default;
+    Route(StopMapType* stopMapPtr)
+        : stopMapPtr(stopMapPtr) {}
+    Route() : Route(nullptr) {}
+
     void addStop(const string& stop);
     size_t getCount() const;
     size_t getCountUnq() const;
-    double getDistance(const unordered_map<string, Stop>& stopMap);
+    double getDistance();
     static double calcDist(const Stop& lhs, const Stop& rhs);
     RouteIt crbegin() const;
     RouteIt crend() const;
 private:
+    const StopMapType* stopMapPtr;
     unordered_set<string> stops;
     list<string> path;
     optional<double> distance;

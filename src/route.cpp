@@ -11,13 +11,13 @@ void Route::addStop(const string& stop) {
 size_t Route::getCount() const {return path.size();}
 size_t Route::getCountUnq() const {return stops.size();}
 
-double Route::getDistance(const unordered_map<string, Stop>& stopMap) {
+double Route::getDistance() {
     if (distance) return *distance;
     distance = 0;
     auto it = path.begin();
     string& prev = *it++;
     while (it != path.end()) {
-        *distance += calcDist(stopMap.at(prev), stopMap.at(*it));
+        *distance += calcDist(stopMapPtr->at(prev), stopMapPtr->at(*it));
         prev = *it++;
     }
     return *distance;
