@@ -1,7 +1,7 @@
 #include <iostream>
 #include "bus_db.h"
 
-using std::string_view, std::to_string, std::cout;
+using std::string_view, std::to_string, std::cout, std::move;
 
 void BusDB::addStop(const string& stopName, double lat, double lon) {
     if (stopMap.count(stopName)) return;
@@ -10,7 +10,7 @@ void BusDB::addStop(const string& stopName, double lat, double lon) {
 
 void BusDB::addRoute(const string& busName, const string& routeString) {
     if (busMap.count(busName)) return;
-    Route& route = busMap[busName];
+    Route route (&stopMap);
     string_view routeView(routeString);
 
     char delim = '>';
@@ -28,6 +28,7 @@ void BusDB::addRoute(const string& busName, const string& routeString) {
         for (auto it = ++route.crbegin(); it != route.crend(); it++)
             route.addStop(*it);
     }
+    busMap[busName] = move(route);
 }
 
 optional<BusStats> BusDB::getBusStats(const string& busName) {
