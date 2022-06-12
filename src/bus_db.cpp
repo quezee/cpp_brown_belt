@@ -36,6 +36,6 @@ optional<BusStats> BusDB::getBusStats(const string& busName) {
     if (!busMap.count(busName))
         return bs;
     Route& route = busMap.at(busName);
-    bs = {route.getCount(), route.getCountUnq(), route.getDistance(stopMap)};
+    bs = {route.getCount(), route.getCountUnq(), route.getDistance()};
     return bs;
 }
